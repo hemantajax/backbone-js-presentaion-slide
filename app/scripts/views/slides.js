@@ -1,4 +1,4 @@
-define(['backbone', "views/slide"], function(Backbone, SlideView) {
+define(['backbone', "views/slide"], function(Backbone, SlideView, MainRouter) {
 
 	var SlidesView = Backbone.View.extend({
 		el: $(".slides"),
