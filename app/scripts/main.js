@@ -12,10 +12,14 @@ require.config({
   }
 });
 
-require(['models/slide', 'viwes/slide'], function(SlideModel, SlideView) {
-
-	var slideModel = new SlideModel({title: "my very 1st slide"});
-	var slideView = new SlideView({model: slideModel});
-
-	$("body").append(slideView.render().el);
+require(['views/app'], function(App) {
+	new App();
 });
+
+// require(['models/slide', 'viwes/slide'], function(SlideModel, SlideView) {
+
+// 	var slideModel = new SlideModel({title: "my very 1st slide"});
+// 	var slideView = new SlideView({model: slideModel});
+
+// 	$("body").append(slideView.render().el);
+// });
