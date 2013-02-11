@@ -1,0 +1,12 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+
+body{
+
+}
+
+.container{
+	width: 1024px;
+	margin: 20px auto;
+	border: 1px dashed #333;
+	padding: 10px;
+}
