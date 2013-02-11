@@ -11,8 +11,11 @@ require.config({
     backbone: "../components/backbone/backbone"
   }
 });
- 
-require(['backbone'], function(app) {
-  // use app here
-  console.log(Backbone);
+
+require(['models/slide', 'viwes/slide'], function(SlideModel, SlideView) {
+
+	var slideModel = new SlideModel({title: "my very 1st slide"});
+	var slideView = new SlideView({model: slideModel});
+
+	$("body").append(slideView.render().el);
 });
