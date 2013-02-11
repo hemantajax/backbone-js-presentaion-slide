@@ -1,13 +1,18 @@
 require.config({
   shim: {
+  	backbone:{
+  		deps:["../components/underscore/underscore", "jquery"],
+  		exports: "Backbone"
+  	}
   },
 
   paths: {
-    jquery: 'vendor/jquery.min'
+    jquery: 'vendor/jquery.min',
+    backbone: "../components/backbone/backbone"
   }
 });
  
-require(['app'], function(app) {
+require(['backbone'], function(app) {
   // use app here
-  console.log(app);
+  console.log(Backbone);
 });
