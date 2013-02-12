@@ -12,6 +12,18 @@ define(['backbone', "views/slides", "collections/slides", "router"], function(Ba
 
 			App.router = new MainRouter();
 			Backbone.history.start();
+		},
+
+		events: {
+			keyup: "keyUp"
+		},
+
+		keyUp: function(e){
+			if(e.keyCode === 37 || e.keyCode === 39){
+				App.Vent.trigger("changeSlide", { 
+					direction: e.keyCode === 39 ? "next" : "prev"
+				});
+			}
 		}
 	});
 
