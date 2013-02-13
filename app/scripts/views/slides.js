@@ -26,7 +26,7 @@ define(['backbone', "views/slide"], function(Backbone, SlideView, MainRouter) {
 			}
 			newSlide = slides.eq(this.currentSlideIndex - 1);
 			
-			slides.filter(":visible").css("position","absolute")
+			slides.filter(":visible")
 				  .animate({
 				  	top: opts.direction === "next" ? "100%" : "-100%",
 				  	opacity: "hide"
@@ -34,8 +34,7 @@ define(['backbone', "views/slide"], function(Backbone, SlideView, MainRouter) {
 
 				  	$(this).css("top", 0);
 
-				  	newSlide.css("position","absolute")
-				  			.css("top", opts.direction === "next" ? "-100%" : "100%")
+				  	newSlide.css("top", opts.direction === "next" ? "-100%" : "100%")
 				  			.animate({
 							  	top: 0,
 							  	opacity: "show"
@@ -57,7 +56,6 @@ define(['backbone', "views/slide"], function(Backbone, SlideView, MainRouter) {
 				this.currentSlideIndex = this.numSlides;
 			}
 
-			console.log(this.currentSlideIndex);
 		},
 
 		hideAllButFirst: function(){

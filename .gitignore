@@ -6,3 +6,4 @@ app/scripts/test.js
 .DS_Store
 app/.DS_Store
 app/scripts/.DS_Store
+.sass-cache/
