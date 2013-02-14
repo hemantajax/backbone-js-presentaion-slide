@@ -68,13 +68,15 @@ h1.normal {
 
 /* line 29, ../../app/styles/slides.sass */
 .bullets ul {
-  padding-left: 0;
+  padding-left: 20px;
+  margin-top: 0;
 }
 
 /* line 32, ../../app/styles/slides.sass */
 .bullets li {
   text-align: left;
   line-height: 1.6em;
+  font-size: 16px;
 }
 
 /* line 38, ../../app/styles/slides.sass */
@@ -128,6 +130,6 @@ pre.prettyprint {
 }
 
 
-.slide.snippet h1{
+.slide.snippet h1, .bullets h1{
   text-align: left;
 }
