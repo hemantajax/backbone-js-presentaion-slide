@@ -4,7 +4,7 @@ define(['backbone', "views/slide"], function(Backbone, SlideView, MainRouter) {
 		el: $(".slides"),
 		initialize: function(){
 			this.currentSlideIndex = 1;
-			this.transitionSpeed = 1000;
+			this.transitionSpeed = 400;
 			this.numSlides = this.collection.length;
 
 			this.renderAll();

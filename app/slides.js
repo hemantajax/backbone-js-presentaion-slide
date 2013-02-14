@@ -11,12 +11,19 @@ window.slides = [
 
 				{
 					title: "my best css snippet",
-					snippet: "scripts/snippets/ex1.css"
+					snippet: "scripts/snippets/ex1.txt"
 				},
 
 				{
 					title: "self executing anonymous function",
-					snippet: "scripts/snippets/ex1.js"
+					snippet: "scripts/snippets/ex2.txt"
+				},
+
+				{
+					snippet:{
+						"css": "scripts/snippets/ex1.txt",
+						"javascript": "scripts/snippets/ex2.txt"
+					}	
 				},
 
 				{title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit"},

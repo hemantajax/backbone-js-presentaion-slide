@@ -7,7 +7,6 @@ define(['backbone'], function(Backbone) {
 		},
 
 		home: function(){
-			console.log("Home Page");
 			App.Vent.trigger("init");
 		},
 

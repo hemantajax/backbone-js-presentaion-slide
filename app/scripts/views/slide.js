@@ -21,8 +21,14 @@ define(['backbone'], function(Backbone) {
 			return this;
 		},
 
-		getHeading: function(){
-			this.$el.append("<h1 class='" + this.model.get("size") +"'>" + this.model.get("title") + "</h1>");
+		getHeading: function(heading){
+			var title = this.model.get("title");
+
+			if(heading){
+				title = heading;
+			}
+
+			this.$el.append("<h1 class='" + this.model.get("size") +"'>" + title + "</h1>");
 		},
 
 		getImage: function(){
@@ -55,24 +61,38 @@ define(['backbone'], function(Backbone) {
 						"</figure>"	].join(""));			
 		},
 
-		getSnippet: function(){
-
-			var self = this,
-				snippet = this.model.get("snippet");
-
-			if(this.model.get("title")){
-				this.getHeading();
-			}
-
-			
+		setSnippet: function(snippetPath, heading){
+			var self = this;
 
 			$.ajax({
-				url: snippet
+				url: snippetPath
 			}).done(function(data){
-				self.$el.addClass("snippet").append("<pre class='prettyprint' >" + _.escape(data) + "</pre>");
+
+				if(heading){
+					self.getHeading(heading);
+				}
+
+				self.$el.addClass("snippet").append("<div><pre class='prettyprint' >" + _.escape(data) + "</pre></div>");
 				prettyPrint();
 			});
-				//.append(["<ul>",list, "</ul>"].join(""));			
+		},
+
+		getSnippet: function(){
+
+
+			var self = this,
+				snippet = this.model.get("snippet"),
+				heading = this.model.get("title");
+
+			if($.isPlainObject(snippet)){
+				_.each(snippet, function(snippetPath, heading){
+					self.setSnippet(snippetPath, heading);
+					return false;
+				});
+
+			}else{
+				this.setSnippet(snippet, heading);
+			}
 		}
 	});
 
